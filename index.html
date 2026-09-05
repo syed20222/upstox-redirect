@@ -1,1 +1,25 @@
-Upstox API Redirect Page
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upstox API Redirect</title>
+</head>
+<body>
+  <h2>Upstox API Redirect</h2>
+  <p id="status">Authorization code খোঁজা হচ্ছে...</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      document.getElementById("status").innerText =
+        "Login সফল হয়েছে। Authorization code পাওয়া গেছে।";
+    } else {
+      document.getElementById("status").innerText =
+        "Authorization code পাওয়া যায়নি।";
+    }
+  </script>
+</body>
+</html>
